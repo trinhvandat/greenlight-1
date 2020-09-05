@@ -9,10 +9,10 @@ local:
 # Use rails credentials:edit to set the AWS secrets (as aws:access_key_id|secret_access_key)
 amazon:
   service: S3
-  access_key_id: <%= ENV['AWS_ACCESS_KEY_ID'] %>
-  secret_access_key: <%= ENV['AWS_SECRET_ACCESS_KEY'] %>
-  region: <%= ENV['AWS_REGION'] %>
-  bucket: <%= ENV['AWS_BUCKET'] %>
+  access_key_id: AKIAQLNXF5DSCQKY5TEY
+  secret_access_key: bzeswMC6miYJ0QZ2UQ0x1qLco3Kla/tPAMts9kFk
+  region: us-east-1
+  bucket: aws-upload-greenlight
 
 # Remember not to checkin your GCS keyfile to a repository
 google:
