@@ -28,7 +28,7 @@ vi:
     errors:
       models:
         user:
-          confirmation: không đúng mật khẩu
+          confirmation: Mật khẩu không chính xác
   administrator:
     site_settings:
       authentication:
@@ -43,6 +43,18 @@ vi:
         placeholder: URL hình ảnh...
         title: Hình ảnh thương hiệu
         invalid: Địa chỉ không hợp lệ
+      legal:
+        change: Thay đổi URL
+        info: Thay đổi Liên kết Điều khoản xuất hiện ở cuối trang
+        placeholder: Điều khoản URL ...
+        title: Điều khoản
+        invalid: URL không hợp lệ
+      privpolicy:
+        change: Thay đổi URL
+        info: Thay đổi Liên kết Chính sách Bảo mật xuất hiện ở cuối trang
+        placeholder: Chính sách bảo mật URL...
+        title: Chính sách bảo mật
+        invalid: URL không hợp lệ
       cache:
         info: Xóa cache - sẽ cần một yêu cầu mới để cập nhật thông tin
         title: Xóa cache
@@ -70,6 +82,18 @@ vi:
         info: Xác định hiển thị công khai hay không cho bản ghi mới
         title: Mặc định hiển thị hay không cho bản ghi
         warning: Cài đặt này chỉ áp dụng cho các phòng không chạy vào thời điểm hiện tại
+      require_consent:
+        info: Cài đặt này cho phép cài đặt phòng cho phép chủ sở hữu phòng chỉ định phòng nào có thể được ghi lại. Người dùng tham gia một phòng đã ghi phải đồng ý trước khi tham gia.
+        title: Yêu cầu chủ sở hữu phòng và người tham gia đồng ý để ghi âm
+      maintenance_banner:
+        info: Hiển thị Biểu ngữ để thông báo cho người dùng về việc bảo trì theo lịch trình
+        title: Biểu ngữ bảo trì
+        display: Đặt
+        clear: dọn dẹp
+        time: "Ví dụ: Cập nhật được lên lịch vào ngày 13 tháng 12 lúc 23:00 ET. Người dùng có thể gặp sự cố khi đăng nhập."
+      preupload:
+        info: Người dùng có thể tải trước một bản trình bày để sử dụng làm bản trình bày mặc định cho phòng cụ thể đó
+        title: Cho phép người dùng tải trước bản trình bày
       registration:
         info: Thay đổi cách thức người dùng đăng ký vào website
         title: Phương thức đăng ký
@@ -83,7 +107,11 @@ vi:
       shared_access:
         info: "Thiết lập chuyển tắt sẽ xóa chức năng này từ các lựa chọn của phòng, khiến người dùng không chia sẻ phòng được"
         title: Cho phép người dùng chia sẻ phòng
-      subtitle: Thiết lập Greenlight
+      subtitle: Thiết lập SchoolOnAir
+      tabs:
+        appearance: Có mặt
+        administration: Quản trị viên
+        settings: Cài đặt
       title: Cài đặt trang
     flash:
       approved: Người dùng đã được duyệt.
@@ -138,17 +166,22 @@ vi:
         info: Cho phép bất kỳ người dùng nào cũng có thể khởi động phòng họp. Mặc định là chỉ có chủ phòng mới được khởi động.
       all_moderator:
         info: Cho phép mọi người dùng quyền quản lý khi gia nhập phòng
+      recordings:
+        info: Cho phép chủ sở hữu phòng chỉ định xem họ có muốn tùy chọn ghi lại phòng hay không. Nếu được bật, người kiểm duyệt vẫn phải nhấp vào nút "Ghi" khi cuộc họp đã bắt đầu.
       options:
         disabled: Tắt
         enabled: Luôn bật
         optional: Tùy chọn
     rooms:
+      ended: "Đã kết thúc:% {session}"
       title: Các phòng trên server
       table:
         id: ID
         not_running: Tắt
         running: Đang sử dụng
+        participants: Những người tham gia
         status: Trạng thái
+        started: "Đã bắt đầu:% {session}"
         view: Xem
     title: Cài đặt tổ chức
     users:
@@ -177,7 +210,7 @@ vi:
         username: Tên đăng nhập
       title: Quản lý người dùng
   add_to_google_calendar: "Thêm vào lịch Google"
-  bigbluebutton: BigBlueButton
+  bigbluebutton: SchoolOnAir
   bigbluebutton_exception: "Rất tiếc, đã xảy ra lỗi khi bắt đầu cuộc họp!"
   cancel: Hủy
   cookies:
@@ -196,47 +229,48 @@ vi:
   enter_your_name: Điền họ tên!
   errors:
     bigbluebutton:
-      help: "Hãy đảm bảo tuân thủ đúng các bước.<a href=\"%{doc_link}\"> Tham khảo thêm</a>"
+      help: Hãy đảm bảo tuân thủ đúng các bước.<a href=\"%{doc_link}\"> Tham khảo thêm</a>
       message: Thiết lập Endpoint và Secret không hợp lệ
       title: Lỗi server
     internal:
       message: Có vẻ có sai sót từ phía chúng tôi.
-      help: "Lỗi đã được ghi lại, chúng tôi sẽ xem xét!"
+      help: Lỗi đã được ghi lại, chúng tôi sẽ xem xét!
       report: Báo cáo lỗi
     maintenance:
-      message: "Xin lỗi, chúng tôi đang bảo trì."
+      message: Xin lỗi, chúng tôi đang bảo trì.
       help: Chúng tôi sẽ quay lại ngay!
     migration_error:
-      contact_admin: "Nếu bạn không phải là quản trị viên, xin vui lòng liên hệ với người quản lý."
+      contact_admin: Nếu bạn không phải là quản trị viên, xin vui lòng liên hệ với người quản lý.
       continue: Tôi muốn tiếp tục sử dụng 1.0.
       notice: >
-        Greenlight gặp lỗi di chuyển cơ sở dữ liệu.<br>Điều này có thể là do bạn chưa cập nhật lên Greenlight 2.0.
+        Greenlight gặp lỗi di chuyển cơ sở dữ liệu.<br>
+        Điều này có thể là do bạn chưa cập nhật lên Greenlight 2.0.
       upgrade: Hãy chỉ cho tôi cách nâng cấp lên 2.0!
-      version: "Chúng tôi đã phát hành phiên bản mới của Greenlight, nhưng cơ sở dữ liệu của bạn không tương thích."
+      version: Chúng tôi đã phát hành phiên bản mới của Greenlight, nhưng cơ sở dữ liệu của bạn không tương thích.
     messages:
       blank: Không thể để trống
       too_short: quá ngắn
       invalid: không có hiệu lục
       taken: đã được thực hiện
       accepted: phải được chấp nhận
-      confirmation: "Không trùng với %{attribute}"
+      confirmation: Không trùng với %{attribute}
       inclusion: không có trong danh sách
     no_provider:
       message: Website bạn đang thử truy cập không được bật
       help: Hãy liên hệ với quản trị hệ thống để cài đặt Greenlight
     not_found:
       message: Xin lỗi! Trang bạn đang tìm không tồn tại.
-      help: "Có thể nó đã được gỡ bỏ?"
+      help: Có thể nó đã được gỡ bỏ?
       user_not_found:
         help: Xin hãy liên hệ quản trị hệ thống.
-        message: "Xin lỗi, người dùng chưa đăng ký."
+        message: Xin lỗi, người dùng chưa đăng ký.
       user_missing:
         help: Xin hãy xác minh lại địa chỉ và thử lại
         message: Địa chỉ bạn nhập vào không hợp lệ.
     title: Lỗi
     unauthorized:
       message: Bạn không có quyền truy cập vào ứng dụng này
-      help: "Nếu bạn nghĩ đây là một lỗi, vui lòng liên hệ với quản trị viên hệ thống."
+      help: Nếu bạn nghĩ đây là một lỗi, vui lòng liên hệ với quản trị viên hệ thống.
   expired_reset_token: Liên kết đặt lại mật khẩu đã hết hạn!
   features:
     title: Tính năng
@@ -245,13 +279,14 @@ vi:
     designs: Tùy chỉnh Thiết kế
     authentication: Chứng thực người dùng
   footer:
-    powered_by: "Được phát triển bởi %{href}."
+    legal: Điều kiện
+    privpolicy: Chính sách bảo mật
+#    powered_by: Được phát triển bởi %{href}.
   forgot_password:
     subtitle: Quên mật khẩu
     email: Email
     submit: Gửi
   go_back: Quay lại
-  greenlight: Greenlight
   header:
     all_recordings: Tất cả bản ghi hình
     dropdown:
@@ -271,13 +306,13 @@ vi:
         subject: 'đã mời bạn xem một bản ghi hình.'
         body: 'Để xem bản ghi, hãy theo liên kết dưới đây:'
         autogenerated: 'Email này được tự động tạo bởi hệ thống LiveRoom.'
-        footer: 'BigBlueButton là hệ thống hội nghị trực tuyến mã nguồn mở. Để biết thêmt thông tin chi tiết về BigBlueButton, vui lòng truy cập https://bigbluebutton.org/.'
+        footer: 'SchoolOnAir là hệ thống học tiếng  anh trực tuyến.'
     search:
       start: Bắt đầu tìm kiếm...
   landing:
-    about: "%{href} là một giao diện cơ bản dành cho máy chủ hội nghị trực tuyến mã nguồn mở BigBlueButton của bạn. Bạn có thể tạo những phòng riêng của mình để tổ chức các phiên hoặc tham gia với những người khác bằng cách sử dụng một liên kết ngắn và thuận tiện."
-    welcome: Chào mừng đến với BigBlueButton.
-    video: Xem thêm hướng dẫn sử dụng Greenlight
+#    about: "%{href} là một giao diện cơ bản dành cho máy chủ học tập trực tuyến SchoolOnAir."
+    welcome: Chào mừng đến với SchoolOnAir.
+    video: Xem thêm hướng dẫn sử dụng SchoolOnAir
     upgrade: Hãy chỉ cho tôi cách nâng cấp lên 2.0!
     version: "Chúng tôi đã phát hành phiên bản mới của Greenlight, nhưng cơ sở dữ liệu của bạn không tương thích."
   language_default: Mặc định (ngôn ngữ từ trình duyệt)
@@ -295,42 +330,42 @@ vi:
           more-info: Để cho phép người dùng này sử dụng website bạn phải duyệt tài khoản của họ trong phần Tổ chức.
           admins_link: Xem trang Tổ chức
           subject: Người dùng mới đăng ký
-          username: "Người dùng đã đăng ký với tên %{name} và email %{email}."
+          username: Người dùng đã đăng ký với tên %{name} và email %{email}.
         subject: Đã duyệt tài khoản
-        username: "Tên đăng nhập là %{email}."
+        username: Tên đăng nhập là %{email}.
       demoted:
-        info: "Bạn không còn là %{role} ở %{url}."
+        info: Bạn không còn là %{role} ở %{url}.
         more-info: Bây giờ bạn có quyền hạn giống như một người dùng bình thường.
         root_link: Đăng nhập
         subtitle: "Quyền hạn của %{role}đã bị hủy bỏ"
       invite:
-        info: "Bạn đã dược mời bởi%{name} để tạo không gian riêng cho mình"
-        signup_info: "Để đăng ký bằng email của bạn, nhấp vào nút bên dưới và làm theo các bước."
+        info: Bạn đã dược mời bởi%{name} để tạo không gian riêng cho mình
+        signup_info: Để đăng ký bằng email của bạn, nhấp vào nút bên dưới và làm theo các bước.
         signup_link: Đăng ký
         signup:
           info: Một user đã được mời đăng ký để sử dụng website
           admins_link: Xem trang Tổ chức
           subject: Người dùng mới đăng ký
-          username: "Người dùng đã đăng ký với tên %{name} và email %{email}."
+          username: Người dùng đã đăng ký với tên %{name} và email %{email}.
         subject: Mời tham gia livestream
-        username: "Tên đăng nhập là %{email}."
+        username: Tên đăng nhập là %{email}.
       password_reset:
         title: 'Đặt lại mật khẩu'
-        welcome: "Email<b>%{email}</b>đã yêu cầu đặt lại mật khẩu mới"
+        welcome: Email<b>%{email}</b>đã yêu cầu đặt lại mật khẩu mới
         message: 'Nếu bạn yêu cầu đổi mật khẩu mới, xin hãy bấm vào link bên dưới để đổi mật khẩu:'
         reset_link: Đặt lại mật khẩu
         expire: Liên kết này sẽ hết hạn trong hai giờ.
         ignore: Bạn có thể bỏ qua email này nếu không phải là bạn yêu cầu đổi mật khẩu.
       promoted:
         admins_link: Xem trang Tổ chức
-        info: "Bây giờ bạn là %{role} trên %{url}."
-        more-info: "Để xem các khả năng mới của bạn, xem %{url}."
+        info: Bây giờ bạn là %{role} trên %{url}.
+        more-info: Để xem các khả năng mới của bạn, xem %{url}.
         subtitle: "Các quyền hạn của %{role} đã được cấp"
       verify_email:
-        welcome: "Chào mừng đến với không gian cá nhân của bạn, %{name}!"
-        success: "Tận dụng %{bigbluebutton}, bạn có thể tạo phòng riêng để tổ chức các phiên và cộng tác với những người khác."
-        username: "Tên đăng nhập là %{email}."
-        verify: "Để xác minh tài khoản của bạn, chỉ cần nhấp vào nút bên dưới."
+        welcome: Chào mừng đến với không gian cá nhân của bạn, %{name}!
+        success: Tận dụng %{bigbluebutton}, bạn có thể tạo phòng riêng để tổ chức các phiên và cộng tác với những người khác.
+        username: Tên đăng nhập là %{email}.
+        verify: Để xác minh tài khoản của bạn, chỉ cần nhấp vào nút bên dưới.
         verify_text: 'Để xác minh tài khoản của bạn, cần vào liên kết sau: %{url}'
         verify_link: Xác nhận Tài khoản
         thanks: Cảm ơn bạn đã tham gia và chúc một ngày tuyệt vời!
@@ -355,17 +390,17 @@ vi:
       not_blank: Tên phòng không được để trống.
       title: Tạo Phòng Mới
     delete_account:
-      confirm: "Bạn có chắc chắn muốn xóa tài khoản này?"
-      delete: "Tôi chắc chắn, hãy xóa tài khoản này."
-      keep: "Thật ra, tôi sẽ giữ nó."
+      confirm: Bạn có chắc chắn muốn xóa tài khoản này?
+      delete: Tôi chắc chắn, hãy xóa tài khoản này.
+      keep: Thật ra, tôi sẽ giữ nó.
       delete_warning: Chức năng này sẽ hủy kích hoạt tài khoản người dùng. Mọi người dùng đã hủy kích hoạt có thể tìm thấy ở tab đã xóa.
       warning: Quyết định này là cuối cùng. Bạn sẽ <b>không thể</b> phục hồi dữ liệu liên quan.
     delete_room:
-      confirm: "Bạn có chắc chắn muốn xóa %{room}?"
-      delete: "Tôi chắc chắn, hãy xóa phòng này."
-      keep: "Ngược lại, tôi sẽ giữ nó."
+      confirm: Bạn có chắc chắn muốn xóa %{room}?
+      delete: Tôi chắc chắn, hãy xóa phòng này.
+      keep: Ngược lại, tôi sẽ giữ nó.
       warning: Bạn sẽ <b>không thể</b>phục hồi lại phòng này
-      recording_warning: "Hoặc bất kỳ bản ghi nào trong số %{recordings_num} bản ghi liên kết."
+      recording_warning: Hoặc bất kỳ bản ghi nào trong số %{recordings_num} bản ghi liên kết.
     invite_user:
       email_placeholder: Nhập vào email của các người dùng (phân tách bằng dấu phẩy)
       footer: Người dùng sẽ nhận được email hướng dẫn làm thế nào để đăng ký
@@ -373,12 +408,20 @@ vi:
       title: Mời người dùng
     login:
       or: hoặc
-      with: "Đăng nhập bằng %{provider}"
-      forgot_password: "Quên Mật khẩu?"
+      with: Đăng nhập bằng %{provider}
+      forgot_password: Quên Mật khẩu?
+    preupload:
+      change: Thay thế bản trình bày
+      choose: Chọn một tập tin ...
+      current: "Bản trình bày hiện tại:"
+      footer: Tùy thuộc vào kích thước của bản trình bày, có thể cần thêm thời gian để tải lên trước khi có thể sử dụng.
+      invalid: Kích thước / loại tệp không hợp lệ. Vui lòng xem các hạn chế bên dưới.
+      title: Thêm bản trình bày
+      use: Sử dụng bản trình bày
     rename_recording:
     remove_shared:
-      title: "Bạn có chắc chắn muốn xóa phòng này khỏi danh sách phòng của bạn?"
-      delete: "Tôi chắc chắn, hãy xóa phòng này."
+      title: Bạn có chắc chắn muốn xóa phòng này khỏi danh sách phòng của bạn?
+      delete: Tôi chắc chắn, hãy xóa phòng này.
       warning: Bạn sẽ <b>không thể</b>truy cập vào phòng này nữa.
     room_settings:
       title: Cài đặt Phòng
@@ -389,6 +432,7 @@ vi:
       require_approval: Yêu cầu người điều hành duyệt trước khi tham gia
       start: Cho phép bất kỳ người dùng nào bắt đầu cuộc họp
       footer_text: Điều chỉnh phòng của bạn có thể được thực hiện bất cứ lúc nào.
+      recording: Cho phép ghi lại buổi học
     rename_room:
       name_placeholder: "Nhập mới tên phòng... "
     share_access:
@@ -468,6 +512,7 @@ vi:
   remove: Xóa
   rename: Đổi tên
   reset_password:
+    invalid_token: Mã thông báo đặt lại mật khẩu không hợp lệ. Vui lòng thử đặt lại mật khẩu của bạn một lần nữa.
     subtitle: Đặt lại mật khẩu
     password: Mật khẩu mới
     confirm: Xác nhận mật khẩu mới
@@ -483,18 +528,21 @@ vi:
   room:
     access_code_required: Vui lòng nhập mã truy cập hợp lệ để tham gia phòng
     create_room: Tạo Phòng
+    add_presentation: Thêm bản trình bày
     create_room_error: Có lỗi khi tạo phòng
     create_room_success: Phòng được tạo thành công
     delete:
       home_room: Không thể xóa Phòng chính của người dùng
       success: Đã xóa phòng
-      fail: "Không thể xóa phòng (%{error})"
+      fail: Không thể xóa phòng (%{error})
     enter_the_access_code: Nhập mã truy cập của phòng
     invalid_provider: Bạn đã nhập một url không hợp lệ. Vui lòng kiểm tra url và thử lại.
+    invitation_description: Bạn đã được mời tham gia %{name} bằng SchoolOnAir. Để tham gia, hãy nhấp vào liên kết ở trên và nhập tên của bạn.
     invited: Bạn đã được mời tham gia
+    recording_present: Tôi xác nhận rằng phiên này sẽ được ghi lại. Điều này có thể bao gồm giọng nói và video của tôi nếu được bật.
     invite_participants: Mời Người tham gia
     join: Tham gia
-    last_session: "Phiên cuối cùng trên %{session}"
+    last_session: Phiên cuối cùng trên %{session}
     login: Nhập
     owner: Người sở hữu
     owner_banned: Phòng này hiện không hoạt động
@@ -508,6 +556,10 @@ vi:
       recent_rooms: Đi đến một phòng mới tham gia gần đây
       title: Tham gia phòng
     no_sessions: Phòng này chưa có phiên nào!
+    preupload_success: Đã thêm thành công bản trình bày
+    preupload_error: Đã xảy ra lỗi khi cập nhật bản trình bày phòng
+    preupload_remove_success: Đã xóa thành công bản trình bày
+    preupload_remove_error: Đã xảy ra lỗi khi xóa bản trình bày phòng
     recordings: Bản ghi hình của Phòng
     room_limit: Bạn đã đạt đến số lượng phòng tối đa được phép
     room_limit_exceeded: "Bạn đã vượt quá số lượng phòng cho phép. Vui lòng xóa bớt %{difference} phòng để truy cập vào phòng này."
@@ -536,9 +588,10 @@ vi:
       roles: Vai trò của người dùng
       subtitle: Cập nhật thông tin Tài khoản
       title: Thông tin Tài khoản
+      reset_password: Đặt lại mật khẩu người dùng
     delete:
-      button: "Có, tôi muốn xóa tài khoản của tôi."
-      disclaimer: "Nếu bạn chọn xóa tài khoản của mình, nó sẽ <b>KHÔNG THỂ</b> phục hồi. Tất cả thông tin liên quan đến tài khoản của bạn, bao gồm cài đặt phòng và bản ghi hình sẽ bị xóa."
+      button: Có, tôi muốn xóa tài khoản của tôi.
+      disclaimer: Nếu bạn chọn xóa tài khoản của mình, nó sẽ <b>KHÔNG THỂ</b> phục hồi. Tất cả thông tin liên quan đến tài khoản của bạn, bao gồm cài đặt phòng và bản ghi hình sẽ bị xóa.
       subtitle: Xóa Vĩnh viễn Tài khoản của bạn
       title: Xóa Tài khoản
     password:
@@ -559,7 +612,8 @@ vi:
     accept_existing: Tôi chấp nhận các điều khoản và điều kiện này.
     title: Điều khoản và điều khiện.
   test_install: >
-    Việc triển khai này đang sử dụng một máy chủ thử nghiệm được cấu hình sẵn, bạn nên thay thế máy chủ này bằng máy chủ của riêng bạn. Để biết chi tiết, xem %{href}.
+    Việc triển khai này đang sử dụng một máy chủ thử nghiệm được cấu hình sẵn, bạn nên thay thế máy chủ này bằng máy chủ của riêng bạn.
+    Để biết chi tiết, xem %{href}.
   update: Cập nhật
   verify:
     accept: Xác thực
