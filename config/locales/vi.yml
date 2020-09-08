@@ -295,7 +295,7 @@ vi:
       home: Trang chủ
       settings: Hồ sơ
       signout: Đăng xuất
-  home_room: Home Room
+  home_room: Phòng
   info_update_success: Thông tin đã được cập nhật thành công.
   invalid_credentials: Email và mật khẩu đã nhập không tìm thấy. Hãy thử lại hoặc bấm vào Quên mật khẩu để lấy mật khẩu mới.
   invalid_login_method: Đăng nhập thất bại do không khớp tài khoản. Bạn cần đăng nhập bằng Omniauth.
